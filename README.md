@@ -412,6 +412,21 @@ and their existing SHA-256 fingerprints.
 
 ## Saved results
 
+Saved results are distributed in the lossless
+[`results_archive/results.tar.gz`](results_archive/results.tar.gz) archive via Git LFS.
+After cloning, run `git lfs pull` and then:
+
+```bash
+python3 results_archive/restore.py
+```
+
+The restore command checks every file against the SHA-256 and byte count in
+[`results_archive/manifest.json`](results_archive/manifest.json). It refuses to
+replace different existing files; pass a separate destination directory as its
+first argument if needed. Restored `results/` files remain ignored by Git.
+The archive also includes the saved Football mutation smoke outputs.
+The filenames below refer to paths created by restoration.
+
 | Historical run | APPS | Code Contests | xCodeEval |
 | --- | --- | --- | --- |
 | `gpt5.4_mini_final` | [gpt54mini_apps.jsonl](results/gpt54mini_apps.jsonl) | [gpt54mini_code_contests.jsonl](results/gpt54mini_code_contests.jsonl) | [gpt54mini_xcodeeval.jsonl](results/gpt54mini_xcodeeval.jsonl) |
@@ -433,6 +448,5 @@ metadata names GPT-5.4 mini. Treat it as a mixed historical population rather th
 765 verified Llama outputs.
 
 [tests/artifact_manifest.json](tests/artifact_manifest.json) records source result
-files, selected line numbers, counts, model evidence, and SHA-256 hashes. Data
-and saved results are visible to Git. Supplementary local logs are excluded from
+files, selected line numbers, counts, model evidence, and SHA-256 hashes. Data and the compressed saved-results archive are tracked by Git. Supplementary local logs are excluded from
 Git and are not needed for readiness tests.

@@ -1,1 +1,2 @@
 *.jsonl filter=lfs diff=lfs merge=lfs -text
+results_archive/*.tar.gz filter=lfs diff=lfs merge=lfs -text
