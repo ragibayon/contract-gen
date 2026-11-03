@@ -66,7 +66,24 @@ for the mixed model-identity evidence in the Maverick-labelled run.
 
 ## Installation
 
-Use Python 3.12 and [uv](https://docs.astral.sh/uv/). From the repository root:
+Use Python 3.12, [uv](https://docs.astral.sh/uv/), and Git LFS. Clone the
+repository and restore the saved results before running the readiness checks:
+
+```bash
+git lfs install
+git clone https://github.com/ragibayon/contract-gen.git
+cd contract-gen
+git lfs pull
+python3 results_archive/restore.py
+```
+
+Git LFS downloads the benchmark JSONL files and the compressed results archive.
+The archive is approximately 385 MB and restores 22 files, including the nine
+saved result JSONL files and Football mutation smoke outputs. Restoration
+requires about 5 GB of additional disk space. See [Saved results](#saved-results)
+for checksum verification and existing-file handling.
+
+Then install the locked dependencies and check readiness:
 
 ```bash
 uv sync --frozen
@@ -88,6 +105,8 @@ an API key.
 ```bash
 uv run --frozen contract --check
 ```
+
+Run the installation and results-restoration steps above first.
 
 This command runs the repository's offline tests using Python's built-in
 `unittest` runner. It does not require `.env`, an API key, the original source
@@ -387,7 +406,8 @@ timeouts. It requires macOS or Linux and is not an OS security sandbox.
 | `data/xCodeEval_update.jsonl` | xCodeEval: 300 tasks. |
 | `data/ablation_258_seed42/` | Saved 86-task subset per benchmark and its original sampling manifest. |
 | `data/*_row0.json`, `data/twogram.json` | Small example inputs. |
-| `results/` | Nine saved JSONL files, listed below; new executions use `results/batch/`. |
+| `results_archive/` | Lossless results archive, per-file checksums, and restoration script. |
+| `results/` | Local files restored from the archive; ignored by Git. New executions use `results/batch/`. |
 | `logs/` | Eight archived logs matching the selected runs and two provenance manifests. This directory is local and ignored by Git. |
 | `pyproject.toml`, `uv.lock`, `.python-version` | Package configuration, locked dependencies, and Python version. |
 | `.env.example` | Environment-variable template. |
@@ -429,9 +449,9 @@ The filenames below refer to paths created by restoration.
 
 | Historical run | APPS | Code Contests | xCodeEval |
 | --- | --- | --- | --- |
-| `gpt5.4_mini_final` | [gpt54mini_apps.jsonl](results/gpt54mini_apps.jsonl) | [gpt54mini_code_contests.jsonl](results/gpt54mini_code_contests.jsonl) | [gpt54mini_xcodeeval.jsonl](results/gpt54mini_xcodeeval.jsonl) |
-| `haiku_fianl` | [haiku45_apps.jsonl](results/haiku45_apps.jsonl) | [haiku45_code_contests.jsonl](results/haiku45_code_contests.jsonl) | [haiku45_xcodeeval.jsonl](results/haiku45_xcodeeval.jsonl) |
-| `smllama4_maverick` | [llama4_maverick_apps.jsonl](results/llama4_maverick_apps.jsonl) | [llama4_maverick_code_contests.jsonl](results/llama4_maverick_code_contests.jsonl) | [llama4_maverick_xcodeeval.jsonl](results/llama4_maverick_xcodeeval.jsonl) |
+| `gpt5.4_mini_final` | `gpt54mini_apps.jsonl` | `gpt54mini_code_contests.jsonl` | `gpt54mini_xcodeeval.jsonl` |
+| `haiku_fianl` | `haiku45_apps.jsonl` | `haiku45_code_contests.jsonl` | `haiku45_xcodeeval.jsonl` |
+| `smllama4_maverick` | `llama4_maverick_apps.jsonl` | `llama4_maverick_code_contests.jsonl` | `llama4_maverick_xcodeeval.jsonl` |
 
 Each row contains 300 APPS, 165 Code Contests, and 300 xCodeEval records. These
 exports keep the last saved record per `task_key` within each historical run,
@@ -448,5 +468,6 @@ metadata names GPT-5.4 mini. Treat it as a mixed historical population rather th
 765 verified Llama outputs.
 
 [tests/artifact_manifest.json](tests/artifact_manifest.json) records source result
-files, selected line numbers, counts, model evidence, and SHA-256 hashes. Data and the compressed saved-results archive are tracked by Git. Supplementary local logs are excluded from
-Git and are not needed for readiness tests.
+files, selected line numbers, counts, model evidence, and SHA-256 hashes. Data
+and the compressed saved-results archive are tracked by Git. Supplementary
+local logs are excluded from Git and are not needed for readiness tests.
