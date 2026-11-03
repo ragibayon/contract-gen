@@ -1,0 +1,237 @@
+{
+  "total": 11,
+  "code_passed": 7,
+  "contract_passed": 8,
+  "code_pass_ratio": 0.6363636363636364,
+  "contract_pass_ratio": 0.7272727272727273,
+  "counts": {
+    "unchanged_pass": 4,
+    "contract_regression": 3,
+    "contract_added_rejection": 4
+  },
+  "cases": [
+    {
+      "index": 0,
+      "type": "oracle",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "classification": "unchanged_pass",
+      "code_passed": true,
+      "contract_passed": true,
+      "code_failure_kind": null,
+      "code_probe_failure_kind": null,
+      "contract_failure_kind": null,
+      "contract_probe_failure_kind": null
+    },
+    {
+      "index": 1,
+      "type": "oracle",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "classification": "unchanged_pass",
+      "code_passed": true,
+      "contract_passed": true,
+      "code_failure_kind": null,
+      "code_probe_failure_kind": null,
+      "contract_failure_kind": null,
+      "contract_probe_failure_kind": null
+    },
+    {
+      "index": 2,
+      "type": "oracle",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "classification": "contract_regression",
+      "code_passed": true,
+      "contract_passed": false,
+      "code_failure_kind": null,
+      "code_probe_failure_kind": null,
+      "contract_failure_kind": "contract_violation",
+      "contract_probe_failure_kind": "contract_violation"
+    },
+    {
+      "index": 3,
+      "type": "oracle",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "classification": "unchanged_pass",
+      "code_passed": true,
+      "contract_passed": true,
+      "code_failure_kind": null,
+      "code_probe_failure_kind": null,
+      "contract_failure_kind": null,
+      "contract_probe_failure_kind": null
+    },
+    {
+      "index": 4,
+      "type": "oracle",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "classification": "unchanged_pass",
+      "code_passed": true,
+      "contract_passed": true,
+      "code_failure_kind": null,
+      "code_probe_failure_kind": null,
+      "contract_failure_kind": null,
+      "contract_probe_failure_kind": null
+    },
+    {
+      "index": 5,
+      "type": "violation",
+      "requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "classification": "contract_added_rejection",
+      "code_passed": false,
+      "contract_passed": true,
+      "code_failure_kind": null,
+      "code_probe_failure_kind": "violation_not_triggered",
+      "contract_failure_kind": "contract_violation",
+      "contract_probe_failure_kind": null
+    },
+    {
+      "index": 6,
+      "type": "violation",
+      "requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "classification": "contract_added_rejection",
+      "code_passed": false,
+      "contract_passed": true,
+      "code_failure_kind": null,
+      "code_probe_failure_kind": "violation_not_triggered",
+      "contract_failure_kind": "contract_violation",
+      "contract_probe_failure_kind": null
+    },
+    {
+      "index": 7,
+      "type": "violation",
+      "requirement_ids": [
+        "NLC-PRE-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "classification": "contract_added_rejection",
+      "code_passed": false,
+      "contract_passed": true,
+      "code_failure_kind": null,
+      "code_probe_failure_kind": "violation_not_triggered",
+      "contract_failure_kind": "contract_violation",
+      "contract_probe_failure_kind": null
+    },
+    {
+      "index": 8,
+      "type": "violation",
+      "requirement_ids": [
+        "NLC-PRE-003"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-003"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "classification": "contract_added_rejection",
+      "code_passed": false,
+      "contract_passed": true,
+      "code_failure_kind": null,
+      "code_probe_failure_kind": "violation_not_triggered",
+      "contract_failure_kind": "contract_violation",
+      "contract_probe_failure_kind": null
+    },
+    {
+      "index": 9,
+      "type": "oracle",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "classification": "contract_regression",
+      "code_passed": true,
+      "contract_passed": false,
+      "code_failure_kind": null,
+      "code_probe_failure_kind": null,
+      "contract_failure_kind": "contract_violation",
+      "contract_probe_failure_kind": "contract_violation"
+    },
+    {
+      "index": 10,
+      "type": "oracle",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "classification": "contract_regression",
+      "code_passed": true,
+      "contract_passed": false,
+      "code_failure_kind": null,
+      "code_probe_failure_kind": null,
+      "contract_failure_kind": "contract_violation",
+      "contract_probe_failure_kind": "contract_violation"
+    }
+  ]
+}

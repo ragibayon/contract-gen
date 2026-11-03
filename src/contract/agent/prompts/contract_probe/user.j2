@@ -1,0 +1,229 @@
+You generate **contract-checking execution probes** for the following programming task.
+
+# Task prompt
+
+{{ task_prompt }}
+
+# NLContracts to exercise
+
+```json
+{{ contracts_json }}
+```
+
+# Compact interface shape
+
+This describes only invocation and input/output structure. Use it to make executable probes with the correct stdin/stdout shape. Do not infer behavior from it.
+
+```json
+{{ interface_json }}
+```
+
+# Executable contract lowering coverage
+
+This trace shows which NLContract IDs were lowered into executable decorators after merging. A single decorator may cover multiple NLContract IDs. Use it only to attach precise requirement IDs and to design meaningful violation probes; do not omit valid precondition checks just because coverage is partial.
+
+```json
+{{ executable_coverage_json }}
+```
+
+# Public execution witnesses
+
+When user-provided public witnesses exist, the pipeline evaluates them directly as trusted primary oracle evidence and usually does not ask the LLM to replace them.
+
+If witnesses are shown here, use them only to clarify input/output representation, serialization, and formatting. Do not infer behavioral requirements, edge cases, or expected semantics from them.
+
+If no public witnesses are provided, infer the representation from the compact interface shape and task prompt.
+```json
+{{ public_witnesses_json }}
+```
+
+# Goal
+
+Generate a complete, compact set of specification-guided probes derived from the problem statement and synthesized NLContracts. The probes must be independent of any generated implementation.
+
+The `probes` array must be non-empty. Do not return `{ "probes": [] }`.
+
+Even when public examples are provided and already evaluated by the pipeline, you must still generate independent LLM contract probes. Public examples are not a substitute for generated contract probes.
+
+A probe is contract evidence. It should help identify whether executable contracts are too weak, too strong, vacuous, malformed, unsupported, or inconsistent with the specification.
+
+Each probe must be one of:
+
+* **oracle** — the exact stdout is known.
+* **violation** — the input intentionally violates a precondition and should trigger an executable contract violation.
+* **metamorphic** — two valid inputs should satisfy a known output relation.
+* **predicate** — stdout should satisfy a simple observable property.
+
+# Critical input-shape rule
+
+Every probe input must be syntactically valid stdin for the task parser.
+
+For **violation** probes, the input may violate semantic bounds, but it must still have the correct stdin shape.
+
+{% if include_examples %}
+Examples:
+
+* If the task expects `n k` on one line, a violation probe must still provide two integers, such as `1 1` or `2 51`; do **not** provide only `0`.
+* If the task expects `n` followed by a string `s`, include both lines, such as `1\nA`; do **not** provide only `1`.
+* If the task expects `n` followed by `n` numbers, include a list whose length is consistent with the supplied `n` unless the contract explicitly requires rejecting malformed lengths.
+* If the task expects a tree with `n` nodes, include exactly `n - 1` edge lines unless the contract explicitly requires rejecting malformed graphs.
+* If the task expects multiple test cases, include the test-case count and all required data for each test case.
+{% endif %}
+
+Malformed stdin is not useful negative evidence. A violation probe that crashes with `ValueError`, unpacking errors, EOF errors, or timeouts will be treated as an invalid probe, not as a successful contract violation.
+
+# Probe completeness rules
+
+* Generate 4 to 6 probes when possible; never return an empty probe list.
+* Assign `priority = "high"` for core behavior, boundary cases, direct precondition/postcondition evidence, and should-violate counterexamples.
+* Assign `priority = "low"` for supplemental evidence.
+* Include at least one valid positive probe when possible.
+* Include at least one violation probe for each stated precondition when possible; use the lowering coverage trace to attach precise requirement IDs and later interpret whether enforcement was covered.
+* If a precondition has lower and upper bounds, include counterexamples for both sides when possible.
+* Include valid boundary cases that should **not** violate contracts.
+* Prefer predicate probes when multiple valid outputs are possible.
+{% if include_cot %}
+* Use oracle only when the exact stdout is certain and unique. Before writing an oracle, privately simulate the algorithm step by step and verify the final expected output.
+{% else %}
+* Use oracle only when the exact stdout is certain and unique.
+{% endif %}
+* If multiple outputs are acceptable, use `predicate`, `metamorphic`, or `expected` as a list of acceptable outputs.
+* Include metamorphic relations only when the specification explicitly justifies them.
+* Do not invent `same_output` relations. If you are unsure, use an oracle or predicate probe instead.
+* Keep probes small and independent.
+* Do not use private tests.
+* Do not generate implementation code.
+
+# Required fields by probe type
+
+## Oracle
+
+Use only when there is exactly one correct stdout.
+
+Set:
+
+* `type = "oracle"`
+* `input = valid stdin text`
+* `expected = exact stdout string or list of allowed stdout strings`
+
+## Violation
+
+Generate an input that violates a stated precondition while preserving stdin shape.
+
+Set:
+
+* `type = "violation"`
+* `expected = null`
+* `relation = "contract_violation"`
+
+## Metamorphic
+
+Provide both `input` and `paired_input`.
+
+Set:
+
+* `type = "metamorphic"`
+* `input = first valid stdin text`
+* `paired_input = second valid stdin text`
+* `relation = known relation, such as same_output`
+
+## Predicate
+
+Describe the observable stdout property in `relation`.
+
+Useful supported relations include:
+
+* `stdout_nonempty`
+* `stdout_length_2`
+* `stdout_is_uppercase`
+* `stdout_in_input`
+* `stdout_one_of_expected`
+* `stdout_int`
+* `stdout_positive_int`
+* `stdout_int_ge:N`
+* `stdout_int_gt:N`
+* `stdout_int_le:N`
+* `stdout_int_lt:N`
+* `stdout_int_between:LOW:HIGH` for inclusive integer bounds
+* `stdout_int_strict_between:LOW:HIGH` for strict integer bounds
+
+{% if include_examples %}
+# Good and bad examples
+
+## Example: two integers
+
+Task input format: `n k`, with `2 <= n <= 10^9` and `1 <= k <= 50`.
+
+Bad violation:
+
+```text
+0
+```
+
+Reason: invalid stdin shape; the program expects two integers.
+
+Good violation:
+
+```text
+1 1
+```
+
+Reason: valid stdin shape, but `n` violates the lower bound.
+
+Good violation:
+
+```text
+2 51
+```
+
+Reason: valid stdin shape, but `k` violates the upper bound.
+
+## Example: n followed by string
+
+Task input format: `n` then string `s`.
+
+Bad predicate:
+
+```text
+5
+```
+
+Reason: missing the required string line.
+
+Good predicate:
+
+```text
+5
+ZZZAA
+```
+
+Reason: valid stdin shape.
+{% endif %}
+
+{% if include_cot %}
+# Private reasoning checklist
+
+Before producing the final structured response, reason privately and carefully:
+
+1. Infer the exact stdin format from the compact interface shape, task prompt, and formatting examples.
+2. Identify every stated precondition in the NLContracts and note which ones are covered by lowered executable decorators.
+3. For each precondition, construct should-violate counterexamples that preserve stdin shape.
+4. Check both lower-side and upper-side violations when bounds exist.
+5. Identify valid boundary inputs that should pass and should not be rejected by over-strong contracts.
+6. Identify postconditions that can be checked by predicates.
+7. For every oracle probe, compute the expected stdout carefully from the stated algorithm; do not guess.
+8. Identify justified metamorphic relations only when the specification supports them explicitly.
+9. Use predicate probes for bounded properties when exact stdout is not uniquely known.
+10. Include relevant requirement IDs, using the lowering coverage trace when helpful.
+Do not expose this reasoning.
+{% endif %}
+
+{% if include_selfcheck %}
+Before returning, privately check:
+1. No violation probe is merely malformed stdin.
+2. Uncertain probes are removed.
+3. The final set is complete but compact.
+4. The response follows the structured schema exactly.
+{% endif %}
+
+Return only the structured output defined by the schema.

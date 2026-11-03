@@ -1,0 +1,27 @@
+__pycache__/
+*.py[codz]
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+logs/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.hypothesis/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+.agents/
+.codex/
+.agent-notes.git/
+AGENTS.md
+
+# Experimental results are retained locally for a later upload.
+/results/

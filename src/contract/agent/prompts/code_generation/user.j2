@@ -1,0 +1,19 @@
+Generate the complete Python program.
+
+Original task:
+{{ task_prompt }}
+
+NLContracts:
+{{ contracts_json }}
+
+Canonical skeleton:
+{{ skeleton }}
+
+{% if output_structure == "raw" %}
+Return only Python code.
+Do not return JSON.
+Do not wrap the code in markdown.
+Do not include explanations.
+{% else %}
+Return the code through the structured schema.
+{% endif %}

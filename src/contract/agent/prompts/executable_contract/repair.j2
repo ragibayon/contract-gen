@@ -1,0 +1,45 @@
+The previous executable contract decorators failed validation.
+
+Repair only the imports/decorators and coverage.
+
+Rules:
+- Do not generate solve(...).
+- Do not generate main().
+- Do not generate implementation code.
+- Preserve the contract intent.
+- Use icontract only.
+- imports must include icontract, usually: import icontract
+- decorators must contain only @icontract.require(...) and @icontract.ensure(...) lines.
+- Avoid vacuous predicates.
+
+{% if output_structure == "raw" %}
+Raw output mode: return exactly one valid JSON object with these fields:
+- imports: Python import lines as a string.
+- decorators: only icontract decorator lines as a string.
+- coverage: list of coverage items.
+Each coverage item has contract_id, lowered_to, expression, and reason.
+
+Hard output rules:
+- The response must start with { and end with }.
+- Use double quotes for every JSON key and string value.
+- Escape newlines inside JSON strings as \n.
+- Do not include markdown fences.
+- Do not include explanations.
+- Do not include comments.
+{% else %}
+Structured response schema:
+- Return exactly one object with these fields:
+  - imports: Python import lines as a string.
+  - decorators: only icontract decorator lines as a string.
+  - coverage: list of coverage items.
+- Each coverage item must have exactly these fields:
+  - contract_id: exact NLContract ID.
+  - lowered_to: one of "require", "ensure", or "omitted".
+  - expression: decorator string when lowered, otherwise "".
+  - reason: short reason.
+- Do not output markdown.
+- Do not output explanations.
+{% endif %}
+
+Validation feedback:
+{{ feedback }}

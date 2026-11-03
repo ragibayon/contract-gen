@@ -1,0 +1,160 @@
+{
+  "example": "Football / Codeforces 96A / xCodeEval problem 782",
+  "source_uid": "ed9a763362abc6ed40356731f1036b38",
+  "historical_run": "haiku_fianl",
+  "historical_model": "anthropic/claude-haiku-4.5",
+  "files": [
+    {
+      "file": "runs/haiku_fianl/code_private_eval.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/code_private_eval.json",
+      "sha256": "8e37dc931ff83a9b73984c4d58005225e31e9a034e88c46d0a38c316e4b23987",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/code_probe_report.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/code_probe_report.json",
+      "sha256": "4beb7dcf8738015fee01155277fbed4d5ed9adb7844dc0a6397dbda421c66d33",
+      "transformation": "none"
+    },
+    {
+      "file": "contract_lowering_coverage.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/contract_lowering_coverage.json",
+      "sha256": "c49233aae242e34a8f00d156a047009cdc2655498cfa2579a00a602ff90d65ae",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/contract_private_eval.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/contract_private_eval.json",
+      "sha256": "fa7bb6d8168d3fffadaa8b243d0de729c6cac50c6ae92517f4ccd487ee6c32f5",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/contract_probe_report.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/contract_probe_report.json",
+      "sha256": "1f4dba416e8a82b2f0c8973ed27d250342adfdc7c02f3014516a96e4049e0052",
+      "transformation": "Local filesystem paths anonymized to relative paths; all other content retained."
+    },
+    {
+      "file": "contract_probes.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/contract_probes.json",
+      "sha256": "f7d604054bf33c6a05a5580e10e59c329216e6ee7ebc1484db825e93339451ce",
+      "transformation": "none"
+    },
+    {
+      "file": "ec_code.py",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/contracted.py",
+      "sha256": "1d04c097847773efab117c172921fbc7dae5847a7e998a07fb657308b5df3e1d",
+      "transformation": "none"
+    },
+    {
+      "file": "ec.py",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/executable_contract.py",
+      "sha256": "a7de5a87c19836cf086a389e73b78f07b61ddfd3f74394c50cb4b21d3109df82",
+      "transformation": "none"
+    },
+    {
+      "file": "code.py",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/generated.py",
+      "sha256": "47a20e80c3a9600b689953050229c1ee6fa3da41d809124d91d55d6b45de9d07",
+      "transformation": "none"
+    },
+    {
+      "file": "interface.py",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/interface.py",
+      "sha256": "161b18ad1bcd0b92ba816cee7e37cbba24081b1ebbc9a9c0e4b01a5f73afd734",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/private_eval.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/private_eval.json",
+      "sha256": "fa7bb6d8168d3fffadaa8b243d0de729c6cac50c6ae92517f4ccd487ee6c32f5",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/probe_availability.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/probe_availability.json",
+      "sha256": "ba06a8ea9c931d02fca8e4dbfe92d087c89b605a4d033c34b25c0e62930e5075",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/probe_comparison.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/probe_comparison.json",
+      "sha256": "73d9a01e96353ac54a07e5a970550d1b6de82e7650eab03ebcad3cc8578c88fb",
+      "transformation": "none"
+    },
+    {
+      "file": "problem_statement.txt",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/problem_statement.txt",
+      "sha256": "ced1df2a2ac3546097ce81648cc1d0f1a568c4bfbbcc5513bf03571ba8efe780",
+      "transformation": "none"
+    },
+    {
+      "file": "public_test_cases.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/public_test_cases.json",
+      "sha256": "ebe79d9fa9e2d4a1775000159f08c5404d5c1c6eb609043f450f67943d9f1d7f",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/raw_outputs/code.txt",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/raw_outputs/code.txt",
+      "sha256": "c111aae664376a1e677923df6d6da47d9e26a6f73a9d9cde0c7da11344e4edf7",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/raw_outputs/contract_probe.txt",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/raw_outputs/contract_probe.txt",
+      "sha256": "afb16c8adefd7e65fa9b1eec868f673d2d1915038b8ed760d097854dcb833d9b",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/raw_outputs/executable_contract.txt",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/raw_outputs/executable_contract.txt",
+      "sha256": "08055a8173775e2c5170fa141d2db55d273ce6ea5fc04a32e9c024c1bf3c9ca0",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/raw_outputs/interface.txt",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/raw_outputs/interface.txt",
+      "sha256": "3103f351267c6bee99e2149c6af2a6a1d58a4eb4d7a787fa5b1da91f5c10dc0f",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/raw_outputs/specification.txt",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/raw_outputs/specification.txt",
+      "sha256": "9f9ab7a21f30623e6d6dd879019979469e6db0aa1acab5b6868e95f20ddc3f9c",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/record.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/record.json",
+      "sha256": "e1048f7f59eeb924bfbe29ce592b7158f9189abb726a7ff3b2a5b06c218df779",
+      "transformation": "Local filesystem paths anonymized to relative paths; all other content retained."
+    },
+    {
+      "file": "nlc.json",
+      "source": "historical/archive/results/batch/haiku_fianl/artifacts/XcodeEval_problem_782/specification.json",
+      "sha256": "2972aa57a6075627f48642d266d1a8c4a8dc61d14e02d3c60c3370f62d21a793",
+      "transformation": "none"
+    },
+    {
+      "file": "runs/haiku_fianl/run_config.json",
+      "source": "historical/archive/results/batch/haiku_fianl/run_config.json",
+      "sha256": "c7fd019eda549981933a88b97e8e7b6caeec0286ded02356f843d964f2d3e9dc",
+      "transformation": "Local filesystem paths anonymized to relative paths; all other content retained."
+    },
+    {
+      "file": "runs/haiku_fianl/dataset_row.json",
+      "source": "historical/reviewer_comments/06_motivating_example/existing_audit/candidates/football/dataset_row.json",
+      "sha256": "2ab3dc280ba139c2cbdd7807a18412ece2342c3b255c8b19044e90dfbe438ef2",
+      "transformation": "none"
+    },
+    {
+      "file": "xCodeEval_update.json",
+      "source": "data/xCodeEval_update.jsonl",
+      "zero_based_row": 238,
+      "sha256": "d2fb7c4e917f9083b8f9960899d9e82f317693f73074fcf21c625d8e0dc6b95e",
+      "transformation": "Single original benchmark row serialized as a JSON object; semantic equality verified."
+    }
+  ],
+  "path_convention": "Paths are relative to the repository root. historical/ denotes the external historical source archive; external/, runtime/, and tmp/ denote anonymous external locations and are not bundled source directories."
+}

@@ -1,0 +1,31 @@
+Previous output was invalid.
+
+Validation error:
+{{ error }}
+
+Repair only the specification response.
+
+{% if output_structure == "raw" %}
+Return exactly this JSON shape:
+
+{{ schema_json }}
+
+Hard repair rules:
+- Return only one valid JSON object.
+- The response must start with { and end with }.
+- Do not include markdown.
+- Do not include ```json fences.
+- Do not include explanations.
+- Do not include reasoning.
+- Do not include comments.
+- Do not include text before or after the JSON.
+- Use double quotes for every JSON key and string value.
+- Do not use trailing commas.
+- Do not output multiple JSON objects.
+- Each contract must include type, text, and evidence.
+- Keep all contracts grounded in the original task.
+{% else %}
+Return only the corrected structured response.
+Do not include markdown, explanations, or reasoning.
+Every contract must include type, text, and evidence.
+{% endif %}

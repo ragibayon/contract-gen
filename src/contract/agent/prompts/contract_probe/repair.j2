@@ -1,0 +1,49 @@
+# Contract-probe repair attempt {{ attempt }}/{{ max_attempts }}
+
+The previous contract-probe response was empty, malformed, schema-invalid, or normalized to zero valid probes. Repair only probe-generation quality issues. Do not use generated-code or executable-contract pass/fail outcomes to change expected outputs.
+
+# Previous error
+
+{{ previous_error }}
+
+# Previous raw output
+
+{{ previous_raw_output }}
+
+# Repair feedback
+
+{{ repair_feedback }}
+
+Important: this feedback concerns probe-plan validity only, not whether a prior probe passed or failed against generated artifacts.
+
+# Mandatory repair rules
+
+You must now return a complete replacement probe plan.
+
+The replacement must satisfy all of the following:
+
+1. The `probes` array must be non-empty.
+2. Generate 4 to 6 compact probes when possible.
+3. Every probe must preserve the exact stdin shape required by the compact interface and task prompt.
+4. Public examples, if present, may only be used to infer input/output serialization and formatting.
+5. Behavioral expectations must come from the problem statement and NLContracts.
+6. Include high-priority should-violate counterexamples for stated preconditions whenever possible, preserving requirement IDs for coverage tracing.
+7. Include valid boundary cases that should not violate contracts.
+8. For each oracle probe, privately recompute the exact expected stdout from the algorithm before returning it.
+9. Prefer predicate probes with supported bounded relations when exact stdout is uncertain.
+10. Use metamorphic probes only for explicitly justified relations; do not invent `same_output`.
+11. Do not return `{ "probes": [] }`.
+
+{% if output_structure == "raw" %}
+Raw output mode:
+- Return exactly one valid JSON object with one field: probes.
+- The response must start with { and end with }.
+- Use double quotes for all JSON keys and string values.
+- Escape newlines inside JSON strings as \n.
+- Use null, not None.
+- Do not include markdown fences.
+- Do not include explanations.
+- Do not include text before or after the JSON.
+{% else %}
+Return only the structured response defined by the schema.
+{% endif %}

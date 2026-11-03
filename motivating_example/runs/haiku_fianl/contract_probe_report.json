@@ -1,0 +1,432 @@
+{
+  "passed": 8,
+  "total": 11,
+  "pass_ratio": 0.7272727272727273,
+  "failures": [
+    {
+      "index": 2,
+      "type": "oracle",
+      "input": "0000000",
+      "paired_input": null,
+      "expected": "YES",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "Exactly 7 consecutive 0s at minimum dangerous threshold; should output YES.",
+      "priority": "high",
+      "passed": false,
+      "actual": "",
+      "stderr": "Traceback (most recent call last):\n  File \"tmp/tmpg312d71g/solution.py\", line 37, in <module>\n    main()\n  File \"tmp/tmpg312d71g/solution.py\", line 34, in main\n    result = solve(s)\n             ^^^^^^^^\n  File \".venv/lib/python3.12/site-packages/icontract/_checkers.py\", line 823, in wrapper\n    raise violation_error\nicontract.errors.ViolationError: File tmp/tmpg312d71g/solution.py, line 6 in <module>:\n'0' in s and '1' in s: s was '0000000'",
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.038283,
+      "failure_kind": "contract_violation",
+      "probe_failure_kind": "contract_violation",
+      "error_type": "icontract.errors.ViolationError"
+    },
+    {
+      "index": 9,
+      "type": "oracle",
+      "input": "000000",
+      "paired_input": null,
+      "expected": "NO",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "6 consecutive 0s is below threshold; should output NO.",
+      "priority": "high",
+      "passed": false,
+      "actual": "",
+      "stderr": "Traceback (most recent call last):\n  File \"tmp/tmp8kemi3gp/solution.py\", line 37, in <module>\n    main()\n  File \"tmp/tmp8kemi3gp/solution.py\", line 34, in main\n    result = solve(s)\n             ^^^^^^^^\n  File \".venv/lib/python3.12/site-packages/icontract/_checkers.py\", line 823, in wrapper\n    raise violation_error\nicontract.errors.ViolationError: File tmp/tmp8kemi3gp/solution.py, line 6 in <module>:\n'0' in s and '1' in s: s was '000000'",
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.036984,
+      "failure_kind": "contract_violation",
+      "probe_failure_kind": "contract_violation",
+      "error_type": "icontract.errors.ViolationError"
+    },
+    {
+      "index": 10,
+      "type": "oracle",
+      "input": "111111",
+      "paired_input": null,
+      "expected": "NO",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "6 consecutive 1s is below threshold; should output NO.",
+      "priority": "high",
+      "passed": false,
+      "actual": "",
+      "stderr": "Traceback (most recent call last):\n  File \"tmp/tmpbjp9tskn/solution.py\", line 37, in <module>\n    main()\n  File \"tmp/tmpbjp9tskn/solution.py\", line 34, in main\n    result = solve(s)\n             ^^^^^^^^\n  File \".venv/lib/python3.12/site-packages/icontract/_checkers.py\", line 823, in wrapper\n    raise violation_error\nicontract.errors.ViolationError: File tmp/tmpbjp9tskn/solution.py, line 6 in <module>:\n'0' in s and '1' in s: s was '111111'",
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.036768,
+      "failure_kind": "contract_violation",
+      "probe_failure_kind": "contract_violation",
+      "error_type": "icontract.errors.ViolationError"
+    }
+  ],
+  "cases": [
+    {
+      "index": 0,
+      "type": "oracle",
+      "input": "001001",
+      "paired_input": null,
+      "expected": "NO",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "No consecutive 7+ players of same team; should output NO.",
+      "priority": "high",
+      "passed": true,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.036068,
+      "failure_kind": null,
+      "probe_failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 1,
+      "type": "oracle",
+      "input": "1000000001",
+      "paired_input": null,
+      "expected": "YES",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "Contains 7 consecutive 0s; should output YES.",
+      "priority": "high",
+      "passed": true,
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.037129,
+      "failure_kind": null,
+      "probe_failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 2,
+      "type": "oracle",
+      "input": "0000000",
+      "paired_input": null,
+      "expected": "YES",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "Exactly 7 consecutive 0s at minimum dangerous threshold; should output YES.",
+      "priority": "high",
+      "passed": false,
+      "actual": "",
+      "stderr": "Traceback (most recent call last):\n  File \"tmp/tmpg312d71g/solution.py\", line 37, in <module>\n    main()\n  File \"tmp/tmpg312d71g/solution.py\", line 34, in main\n    result = solve(s)\n             ^^^^^^^^\n  File \".venv/lib/python3.12/site-packages/icontract/_checkers.py\", line 823, in wrapper\n    raise violation_error\nicontract.errors.ViolationError: File tmp/tmpg312d71g/solution.py, line 6 in <module>:\n'0' in s and '1' in s: s was '0000000'",
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.038283,
+      "failure_kind": "contract_violation",
+      "probe_failure_kind": "contract_violation",
+      "error_type": "icontract.errors.ViolationError"
+    },
+    {
+      "index": 3,
+      "type": "oracle",
+      "input": "11111110",
+      "paired_input": null,
+      "expected": "YES",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "Contains 7 consecutive 1s; should output YES.",
+      "priority": "high",
+      "passed": true,
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.039443,
+      "failure_kind": null,
+      "probe_failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 4,
+      "type": "oracle",
+      "input": "000001111111",
+      "paired_input": null,
+      "expected": "YES",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "Contains 7 consecutive 1s at end; should output YES.",
+      "priority": "high",
+      "passed": true,
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.039124,
+      "failure_kind": null,
+      "probe_failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 5,
+      "type": "violation",
+      "input": "0",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "Only 0s present; violates requirement that both teams must be on field.",
+      "priority": "high",
+      "passed": true,
+      "actual": "",
+      "stderr": "Traceback (most recent call last):\n  File \"tmp/tmpzlnfgf3b/solution.py\", line 37, in <module>\n    main()\n  File \"tmp/tmpzlnfgf3b/solution.py\", line 34, in main\n    result = solve(s)\n             ^^^^^^^^\n  File \".venv/lib/python3.12/site-packages/icontract/_checkers.py\", line 823, in wrapper\n    raise violation_error\nicontract.errors.ViolationError: File tmp/tmpzlnfgf3b/solution.py, line 6 in <module>:\n'0' in s and '1' in s: s was '0'",
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.04021,
+      "failure_kind": "contract_violation",
+      "probe_failure_kind": null,
+      "error_type": "icontract.errors.ViolationError"
+    },
+    {
+      "index": 6,
+      "type": "violation",
+      "input": "1",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "Only 1s present; violates requirement that both teams must be on field.",
+      "priority": "high",
+      "passed": true,
+      "actual": "",
+      "stderr": "Traceback (most recent call last):\n  File \"tmp/tmpuchbk3u5/solution.py\", line 37, in <module>\n    main()\n  File \"tmp/tmpuchbk3u5/solution.py\", line 34, in main\n    result = solve(s)\n             ^^^^^^^^\n  File \".venv/lib/python3.12/site-packages/icontract/_checkers.py\", line 823, in wrapper\n    raise violation_error\nicontract.errors.ViolationError: File tmp/tmpuchbk3u5/solution.py, line 6 in <module>:\n'0' in s and '1' in s: s was '1'",
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.03774,
+      "failure_kind": "contract_violation",
+      "probe_failure_kind": null,
+      "error_type": "icontract.errors.ViolationError"
+    },
+    {
+      "index": 7,
+      "type": "violation",
+      "input": "01010120101",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "Contains character '2'; violates constraint that string must contain only 0 and 1.",
+      "priority": "high",
+      "passed": true,
+      "actual": "",
+      "stderr": "Traceback (most recent call last):\n  File \"tmp/tmpbvx0vps5/solution.py\", line 37, in <module>\n    main()\n  File \"tmp/tmpbvx0vps5/solution.py\", line 34, in main\n    result = solve(s)\n             ^^^^^^^^\n  File \".venv/lib/python3.12/site-packages/icontract/_checkers.py\", line 823, in wrapper\n    raise violation_error\nicontract.errors.ViolationError: File tmp/tmpbvx0vps5/solution.py, line 4 in <module>:\nall(c in '01' for c in s):\nall(c in '01' for c in s) was False, e.g., with\n  c = '2'\ns was '01010120101'",
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.035926,
+      "failure_kind": "contract_violation",
+      "probe_failure_kind": null,
+      "error_type": "icontract.errors.ViolationError"
+    },
+    {
+      "index": 8,
+      "type": "violation",
+      "input": "01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-003"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-003"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "String length 128 exceeds maximum of 100 characters.",
+      "priority": "high",
+      "passed": true,
+      "actual": "",
+      "stderr": "Traceback (most recent call last):\n  File \"tmp/tmp7wa01qyp/solution.py\", line 37, in <module>\n    main()\n  File \"tmp/tmp7wa01qyp/solution.py\", line 34, in main\n    result = solve(s)\n             ^^^^^^^^\n  File \".venv/lib/python3.12/site-packages/icontract/_checkers.py\", line 823, in wrapper\n    raise violation_error\nicontract.errors.ViolationError: File tmp/tmp7wa01qyp/solution.py, line 5 in <module>:\nlen(s) <= 100:\nlen(s) was 122\ns was '01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101'",
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.038777,
+      "failure_kind": "contract_violation",
+      "probe_failure_kind": null,
+      "error_type": "icontract.errors.ViolationError"
+    },
+    {
+      "index": 9,
+      "type": "oracle",
+      "input": "000000",
+      "paired_input": null,
+      "expected": "NO",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "6 consecutive 0s is below threshold; should output NO.",
+      "priority": "high",
+      "passed": false,
+      "actual": "",
+      "stderr": "Traceback (most recent call last):\n  File \"tmp/tmp8kemi3gp/solution.py\", line 37, in <module>\n    main()\n  File \"tmp/tmp8kemi3gp/solution.py\", line 34, in main\n    result = solve(s)\n             ^^^^^^^^\n  File \".venv/lib/python3.12/site-packages/icontract/_checkers.py\", line 823, in wrapper\n    raise violation_error\nicontract.errors.ViolationError: File tmp/tmp8kemi3gp/solution.py, line 6 in <module>:\n'0' in s and '1' in s: s was '000000'",
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.036984,
+      "failure_kind": "contract_violation",
+      "probe_failure_kind": "contract_violation",
+      "error_type": "icontract.errors.ViolationError"
+    },
+    {
+      "index": 10,
+      "type": "oracle",
+      "input": "111111",
+      "paired_input": null,
+      "expected": "NO",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "6 consecutive 1s is below threshold; should output NO.",
+      "priority": "high",
+      "passed": false,
+      "actual": "",
+      "stderr": "Traceback (most recent call last):\n  File \"tmp/tmpbjp9tskn/solution.py\", line 37, in <module>\n    main()\n  File \"tmp/tmpbjp9tskn/solution.py\", line 34, in main\n    result = solve(s)\n             ^^^^^^^^\n  File \".venv/lib/python3.12/site-packages/icontract/_checkers.py\", line 823, in wrapper\n    raise violation_error\nicontract.errors.ViolationError: File tmp/tmpbjp9tskn/solution.py, line 6 in <module>:\n'0' in s and '1' in s: s was '111111'",
+      "returncode": 1,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.036768,
+      "failure_kind": "contract_violation",
+      "probe_failure_kind": "contract_violation",
+      "error_type": "icontract.errors.ViolationError"
+    }
+  ],
+  "contract_violations": 7,
+  "invalid_violation_probes": 0,
+  "runtime_errors": 0,
+  "timeouts": 0,
+  "wrong_outputs": 0,
+  "predicate_failures": 0,
+  "relation_failures": 0,
+  "nonzero_exits": 0,
+  "supported_violation_probes": 4,
+  "unsupported_violation_probes": 0,
+  "uncovered_violation_requirement_ids": []
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "2026-06-contract-batch-v2",
+  "run_name": "haiku_fianl",
+  "created_at": "2026-06-28T23:46:40+00:00",
+  "provider": "openrouter",
+  "model": "anthropic/claude-haiku-4.5",
+  "temperature": 0.8,
+  "max_tokens": 2048,
+  "timeout": 60,
+  "exec_timeout": 5.0,
+  "private_timeout": 5.0,
+  "llm_retries": 6,
+  "max_attempts": 3,
+  "witness_split": "public",
+  "eval_split": "private",
+  "eval_private": true,
+  "output_structure": "raw",
+  "sleep_between_tasks": 1.0,
+  "datasets": [
+    {
+      "path": "data/xCodeEval_update.jsonl",
+      "size_bytes": 3623669,
+      "sha256": "3968a6ed9bf7ea30b96eb28f4b350ca6463769226063b176e0054dfa5bd27e23"
+    },
+    {
+      "path": "data/apps_specine_update.jsonl",
+      "size_bytes": 201666267,
+      "sha256": "c7405ca54b0fdff27d547819014a260238ccd9ca0fed6a0193f983171dfdf88d"
+    },
+    {
+      "path": "data/code_contests_update.jsonl",
+      "size_bytes": 195862094,
+      "sha256": "480cdfe80c0119c01fd721d0fab237f6cd0c456611325ec2a2fe24c315833cb3"
+    }
+  ],
+  "output_root": "results/batch"
+}

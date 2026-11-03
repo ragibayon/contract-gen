@@ -1,0 +1,37 @@
+Extract the natural-language contract inventory from the following programming task.
+
+Task ID:
+{{ task_id }}
+
+Entry point:
+{{ entry_point_json }}
+
+Task:
+{{ task_prompt }}
+
+{% if output_structure == "raw" %}
+Return exactly this JSON shape:
+
+{{ schema_json }}
+
+Raw JSON requirements:
+- Return only one JSON object.
+- The response must start with { and end with }.
+- Do not wrap the JSON in markdown.
+- Do not include reasoning.
+- Do not include explanations.
+- Do not include comments.
+- Each contract object must have exactly these fields: type, text, evidence.
+- type must be one of: precondition, postcondition, invariant, resource_bound.
+- text must contain the atomic contract statement.
+- evidence must quote or paraphrase the task text that grounds the contract.
+{% else %}
+Return the structured specification object with:
+- summary
+- contracts
+
+Each contract must include:
+- type
+- text
+- evidence
+{% endif %}

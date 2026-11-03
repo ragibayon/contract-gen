@@ -1,0 +1,454 @@
+{
+  "passed": 7,
+  "total": 11,
+  "pass_ratio": 0.6363636363636364,
+  "failures": [
+    {
+      "index": 5,
+      "type": "violation",
+      "input": "0",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "Only 0s present; violates requirement that both teams must be on field.",
+      "priority": "high",
+      "passed": false,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.011644,
+      "failure_kind": null,
+      "probe_failure_kind": "violation_not_triggered",
+      "error_type": null
+    },
+    {
+      "index": 6,
+      "type": "violation",
+      "input": "1",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "Only 1s present; violates requirement that both teams must be on field.",
+      "priority": "high",
+      "passed": false,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.013396,
+      "failure_kind": null,
+      "probe_failure_kind": "violation_not_triggered",
+      "error_type": null
+    },
+    {
+      "index": 7,
+      "type": "violation",
+      "input": "01010120101",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "Contains character '2'; violates constraint that string must contain only 0 and 1.",
+      "priority": "high",
+      "passed": false,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.011783,
+      "failure_kind": null,
+      "probe_failure_kind": "violation_not_triggered",
+      "error_type": null
+    },
+    {
+      "index": 8,
+      "type": "violation",
+      "input": "01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-003"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-003"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "String length 128 exceeds maximum of 100 characters.",
+      "priority": "high",
+      "passed": false,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.011854,
+      "failure_kind": null,
+      "probe_failure_kind": "violation_not_triggered",
+      "error_type": null
+    }
+  ],
+  "cases": [
+    {
+      "index": 0,
+      "type": "oracle",
+      "input": "001001",
+      "paired_input": null,
+      "expected": "NO",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "No consecutive 7+ players of same team; should output NO.",
+      "priority": "high",
+      "passed": true,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.011639,
+      "failure_kind": null,
+      "probe_failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 1,
+      "type": "oracle",
+      "input": "1000000001",
+      "paired_input": null,
+      "expected": "YES",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "Contains 7 consecutive 0s; should output YES.",
+      "priority": "high",
+      "passed": true,
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.012089,
+      "failure_kind": null,
+      "probe_failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 2,
+      "type": "oracle",
+      "input": "0000000",
+      "paired_input": null,
+      "expected": "YES",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "Exactly 7 consecutive 0s at minimum dangerous threshold; should output YES.",
+      "priority": "high",
+      "passed": true,
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.012275,
+      "failure_kind": null,
+      "probe_failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 3,
+      "type": "oracle",
+      "input": "11111110",
+      "paired_input": null,
+      "expected": "YES",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "Contains 7 consecutive 1s; should output YES.",
+      "priority": "high",
+      "passed": true,
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.012187,
+      "failure_kind": null,
+      "probe_failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 4,
+      "type": "oracle",
+      "input": "000001111111",
+      "paired_input": null,
+      "expected": "YES",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "Contains 7 consecutive 1s at end; should output YES.",
+      "priority": "high",
+      "passed": true,
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.011813,
+      "failure_kind": null,
+      "probe_failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 5,
+      "type": "violation",
+      "input": "0",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "Only 0s present; violates requirement that both teams must be on field.",
+      "priority": "high",
+      "passed": false,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.011644,
+      "failure_kind": null,
+      "probe_failure_kind": "violation_not_triggered",
+      "error_type": null
+    },
+    {
+      "index": 6,
+      "type": "violation",
+      "input": "1",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "Only 1s present; violates requirement that both teams must be on field.",
+      "priority": "high",
+      "passed": false,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.013396,
+      "failure_kind": null,
+      "probe_failure_kind": "violation_not_triggered",
+      "error_type": null
+    },
+    {
+      "index": 7,
+      "type": "violation",
+      "input": "01010120101",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "Contains character '2'; violates constraint that string must contain only 0 and 1.",
+      "priority": "high",
+      "passed": false,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.011783,
+      "failure_kind": null,
+      "probe_failure_kind": "violation_not_triggered",
+      "error_type": null
+    },
+    {
+      "index": 8,
+      "type": "violation",
+      "input": "01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101",
+      "paired_input": null,
+      "expected": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-003"
+      ],
+      "covered_requirement_ids": [
+        "NLC-PRE-003"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": true,
+      "reason": "String length 128 exceeds maximum of 100 characters.",
+      "priority": "high",
+      "passed": false,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.011854,
+      "failure_kind": null,
+      "probe_failure_kind": "violation_not_triggered",
+      "error_type": null
+    },
+    {
+      "index": 9,
+      "type": "oracle",
+      "input": "000000",
+      "paired_input": null,
+      "expected": "NO",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "6 consecutive 0s is below threshold; should output NO.",
+      "priority": "high",
+      "passed": true,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.012029,
+      "failure_kind": null,
+      "probe_failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 10,
+      "type": "oracle",
+      "input": "111111",
+      "paired_input": null,
+      "expected": "NO",
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "covered_requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "uncovered_requirement_ids": [],
+      "violation_supported_by_lowered_contract": null,
+      "reason": "6 consecutive 1s is below threshold; should output NO.",
+      "priority": "high",
+      "passed": true,
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 10.0,
+      "elapsed_sec": 0.013923,
+      "failure_kind": null,
+      "probe_failure_kind": null,
+      "error_type": null
+    }
+  ],
+  "contract_violations": 0,
+  "invalid_violation_probes": 0,
+  "runtime_errors": 0,
+  "timeouts": 0,
+  "wrong_outputs": 0,
+  "predicate_failures": 0,
+  "relation_failures": 0,
+  "nonzero_exits": 0,
+  "supported_violation_probes": 4,
+  "unsupported_violation_probes": 0,
+  "uncovered_violation_requirement_ids": []
+}

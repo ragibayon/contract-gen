@@ -1,0 +1,25 @@
+The previous code generation attempt failed.
+
+Feedback:
+{{ feedback }}
+
+Repair the program.
+
+Requirements:
+- Preserve solve(...) and main().
+- Preserve the solve(...) signature from the skeleton.
+- solve(...) must return the computed answer.
+- main() must parse stdin, call solve(...), and print the answer.
+- Do not read stdin inside solve(...).
+- Do not print inside solve(...).
+- Respect the task time and memory limits.
+
+{% if output_structure == "raw" %}
+Return only complete Python code.
+Do not return JSON.
+Do not use markdown fences.
+Do not include explanations.
+{% else %}
+Return only the structured code artifact.
+Do not include explanations outside the structured object.
+{% endif %}

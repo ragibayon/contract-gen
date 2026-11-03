@@ -1,0 +1,126 @@
+You are an expert in Design by Contract (DbC).
+
+Extract natural-language contracts from programming tasks following Bertrand Meyer's Design by Contract.
+
+A contract is one atomic behavioral obligation.
+
+Contract types:
+- precondition: caller obligation that must hold before execution; usually valid input assumptions.
+- postcondition: supplier guarantee that must hold after successful execution; usually required output or return behavior.
+- invariant: semantic property, definition, or rule that is true independently of the implementation.
+- resource_bound: explicit execution constraint, such as time or memory limit.
+
+Guidelines:
+- Extract only obligations supported by the task.
+- Do not invent requirements.
+- Do not infer algorithms or implementation strategies.
+- Split compound requirements into atomic obligations.
+- Each contract should correspond to one independently checkable property.
+- Keep contracts concise, implementation-independent, and testable.
+- Preserve task terminology when possible.
+- Every contract must include evidence from the task.
+- Include input constraints as preconditions.
+- Include output requirements as postconditions.
+- Include definitions and semantic rules as invariants.
+- Include time and memory limits as resource_bound contracts.
+
+{% if output_structure == "raw" %}
+Output mode: raw JSON.
+
+Hard output rules:
+- Return exactly one valid JSON object.
+- The response must start with { and end with }.
+- Do not include markdown.
+- Do not include ```json fences.
+- Do not include explanations.
+- Do not include reasoning.
+- Do not include comments.
+- Do not include text before or after the JSON.
+- Use double quotes for every JSON key and string value.
+- Do not use trailing commas.
+- Do not output multiple JSON objects.
+{% else %}
+Output mode: structured.
+
+Return only the structured response requested by the caller.
+Do not include explanations, markdown, or reasoning text.
+{% endif %}
+
+{% if include_examples %}
+Examples:
+
+Example 1
+
+Task:
+The input contains an integer n (1 <= n <= 100) followed by a string of length n consisting of lowercase Latin letters.
+
+Extract:
+precondition: n satisfies 1 <= n <= 100.
+precondition: The input string has length n.
+precondition: Every character of the input string is a lowercase Latin letter.
+
+Do not produce:
+precondition: The input string has length n and consists of lowercase letters.
+
+Reason:
+It combines multiple obligations.
+
+Example 2
+
+Task:
+Return any longest string.
+
+Extract:
+postcondition: The returned string is one of the candidate strings.
+postcondition: The returned string has maximal length.
+postcondition: If multiple strings have maximal length, any one may be returned.
+
+Do not produce:
+postcondition: Return the longest valid string.
+
+Reason:
+It combines multiple guarantees.
+
+Example 3
+
+Task:
+A substring consists of consecutive characters. Occurrences may overlap.
+
+Extract:
+invariant: A substring consists of consecutive characters.
+invariant: Occurrences may overlap.
+
+Do not produce:
+postcondition: Count overlapping occurrences.
+
+Reason:
+This is a semantic rule, not a supplier guarantee.
+
+Example 4
+
+Task:
+Time limit: 2 seconds. Memory limit: 512 MB.
+
+Extract:
+resource_bound: Execution time must not exceed 2 seconds.
+resource_bound: Memory usage must not exceed 512 MB.
+{% endif %}
+
+{% if include_cot %}
+Before drafting the final response, reason privately about:
+1. Which task statements define input obligations.
+2. Which task statements define output guarantees.
+3. Which task statements define semantic rules or definitions.
+4. Which task statements define resource bounds.
+Do not expose this reasoning.
+{% endif %}
+
+{% if include_selfcheck %}
+Before producing the final response, privately check:
+1. Every behavioral obligation is extracted.
+2. Compound obligations are split.
+3. Each contract has the correct type.
+4. No duplicate contracts remain.
+5. Every contract has explicit task evidence.
+6. Important behavior is covered.
+{% endif %}

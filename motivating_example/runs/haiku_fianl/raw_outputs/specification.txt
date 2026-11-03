@@ -1,0 +1,52 @@
+```json
+{
+  "summary": "Determine whether a string of football players contains at least 7 consecutive players from the same team, making the situation dangerous.",
+  "contracts": [
+    {
+      "type": "precondition",
+      "text": "The input string is non-empty.",
+      "evidence": "The first input line contains a non-empty string consisting of characters '0' and '1'."
+    },
+    {
+      "type": "precondition",
+      "text": "The input string consists only of characters '0' and '1'.",
+      "evidence": "The first input line contains a non-empty string consisting of characters '0' and '1', which represents players."
+    },
+    {
+      "type": "precondition",
+      "text": "The length of the input string does not exceed 100 characters.",
+      "evidence": "The length of the string does not exceed 100 characters."
+    },
+    {
+      "type": "precondition",
+      "text": "At least one player from each team is present on the field.",
+      "evidence": "There's at least one player from each team present on the field."
+    },
+    {
+      "type": "invariant",
+      "text": "A situation is dangerous if and only if there are at least 7 players of some team standing one after another.",
+      "evidence": "If there are at least 7 players of some team standing one after another, then the situation is considered dangerous."
+    },
+    {
+      "type": "postcondition",
+      "text": "The output is 'YES' if the situation is dangerous.",
+      "evidence": "Print 'YES' if the situation is dangerous."
+    },
+    {
+      "type": "postcondition",
+      "text": "The output is 'NO' if the situation is not dangerous.",
+      "evidence": "Otherwise, print 'NO'."
+    },
+    {
+      "type": "resource_bound",
+      "text": "Execution time must not exceed 2 seconds.",
+      "evidence": "Time: 2 seconds"
+    },
+    {
+      "type": "resource_bound",
+      "text": "Memory usage must not exceed 256 megabytes.",
+      "evidence": "Memory: 256 megabytes"
+    }
+  ]
+}
+```

@@ -1,0 +1,29 @@
+The previous program interface failed validation.
+
+Repair only the Python interface skeleton.
+
+Rules:
+- Preserve the task's required input and output behavior.
+- Return a complete, syntactically valid Python skeleton.
+- Keep solve(...), main(), and the if-main guard.
+- Keep only the solve(...) algorithm body as a pass statement.
+- Keep main() responsible for parsing stdin, calling solve(...), and printing.
+- Do not return implementation logic.
+
+{% if output_structure == "raw" %}
+Raw output mode:
+- Return only the repaired complete Python skeleton.
+- Do not return JSON.
+- Do not include markdown fences.
+- Do not include explanations.
+{% else %}
+Structured response schema:
+- Return exactly one object with this field:
+  - skeleton: complete Python skeleton as a string.
+- Do not output markdown.
+- Do not output explanations.
+- Do not output Python outside the schema.
+{% endif %}
+
+Validation feedback:
+{{ feedback }}

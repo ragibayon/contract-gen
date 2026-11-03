@@ -1,0 +1,750 @@
+{
+  "split": "private",
+  "artifact": "contracted_code",
+  "passed": 43,
+  "total": 43,
+  "pass_ratio": 1.0,
+  "pass_at_1": true,
+  "completed": 43,
+  "completeness": 1.0,
+  "contract_violations": 0,
+  "runtime_errors": 0,
+  "timeouts": 0,
+  "wrong_outputs": 0,
+  "nonzero_exits": 0,
+  "cases": [
+    {
+      "index": 0,
+      "input": "001001\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.035288,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 1,
+      "input": "1000000001\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.037145,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 2,
+      "input": "00100110111111101\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.03468,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 3,
+      "input": "11110111111111111\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.035703,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 4,
+      "input": "01\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.034969,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 5,
+      "input": "10100101\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.037309,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 6,
+      "input": "1010010100000000010\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.03595,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 7,
+      "input": "101010101\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.037791,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 8,
+      "input": "000000000100000000000110101100000\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.038653,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 9,
+      "input": "100001000000110101100000\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.043357,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 10,
+      "input": "100001000011010110000\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.038156,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 11,
+      "input": "010\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.041556,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 12,
+      "input": "10101011111111111111111111111100\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.039646,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 13,
+      "input": "1001101100\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.036001,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 14,
+      "input": "1001101010\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.038671,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 15,
+      "input": "1111100111\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.039853,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 16,
+      "input": "00110110001110001111\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.038486,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 17,
+      "input": "11110001001111110001\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.039528,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 18,
+      "input": "10001111001011111101\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.037456,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 19,
+      "input": "10000010100000001000110001010100001001001010011\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.039879,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 20,
+      "input": "01111011111010111100101100001011001010111110000010\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.037769,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 21,
+      "input": "00100000100100101110011001011011101110110110010100\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.039795,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 22,
+      "input": "10110100110001001011110101110010100010000000000100101010111110111110100011\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.039671,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 23,
+      "input": "00011101010101111001011011001101101011111101000010100000111000011100101011\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.040234,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 24,
+      "input": "01110000110100110101110100111000101101011101011110110100100111100001110111\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.036552,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 25,
+      "input": "11110110011000100111100111101101011111110100010101011011111101110110110111\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.038981,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 26,
+      "input": "100100010101110010001011001110100011100010011110100101100011010001001010001001101111001100\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.038361,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 27,
+      "input": "111110010001011010010011111100110110001111000010100011011100111101111101110010101111011110000001010\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.036689,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 28,
+      "input": "111110111100010100000100001010111011101011000111011011011010110010100010000101011111000011010011110\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.037885,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 29,
+      "input": "1011110110111010110111111010010010100011111011110000011000110010011110111010110100011010100010111000\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.040485,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 30,
+      "input": "0010100111100010110110000011100111110100111110001010000100111111111010111100101101010101001011010110\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.037038,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 31,
+      "input": "1111010100010100101011101100101101110011000010100010000001111100010011100101010001101111000001011000\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.036896,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 32,
+      "input": "0101100011001110001110100111100011010101011000000000110110010010111100101111010111100011101100100101\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.034882,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 33,
+      "input": "0001101110011101110000000010011111101001101111100001001010110000110001100000010001111011011110001101\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.036573,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 34,
+      "input": "1000010000100000100010000100001000010000100001000010000100001000010000100001000010000100001000010000\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.03909,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 35,
+      "input": "1000000000100000000010000000001000000000100000000010000000001000000000100000000010000000001000000000\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.041439,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 36,
+      "input": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.033077,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 37,
+      "input": "1111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111111111111\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.036903,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 38,
+      "input": "10100101000\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.035892,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 39,
+      "input": "11110111011101\r\n",
+      "expected": [
+        "NO"
+      ],
+      "actual": "NO",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.034686,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 40,
+      "input": "00000001\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.036725,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 41,
+      "input": "01111111\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.037346,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    },
+    {
+      "index": 42,
+      "input": "11111110\r\n",
+      "expected": [
+        "YES"
+      ],
+      "actual": "YES",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "timeout_sec": 5.0,
+      "elapsed_sec": 0.035751,
+      "passed": true,
+      "completed": true,
+      "failure_kind": null,
+      "error_type": null
+    }
+  ],
+  "failures": [],
+  "error": null
+}

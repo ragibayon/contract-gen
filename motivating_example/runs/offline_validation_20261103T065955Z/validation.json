@@ -1,0 +1,87 @@
+{
+  "kind": "New offline validation of unchanged historical artifacts; no inference",
+  "timestamp_utc": "2026-11-03T06:59:55.433651+00:00",
+  "python": "historical/.venv/bin/python",
+  "execution": "Separate processes with Python isolated mode, temporary working directories, wall timeouts, and POSIX resource limits.",
+  "limits": {
+    "cpu_seconds": 5,
+    "wall_seconds": 10,
+    "file_size_bytes": 1048576,
+    "open_files": 64
+  },
+  "cases": [
+    {
+      "artifact": "code.py",
+      "case": "valid_no",
+      "input": "001001\n",
+      "valid_domain": true,
+      "required_output": "NO",
+      "stdout": "NO\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.012383,
+      "observed_behavior_matches_saved_example": true
+    },
+    {
+      "artifact": "code.py",
+      "case": "valid_yes",
+      "input": "1000000001\n",
+      "valid_domain": true,
+      "required_output": "YES",
+      "stdout": "YES\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.01271,
+      "observed_behavior_matches_saved_example": true
+    },
+    {
+      "artifact": "code.py",
+      "case": "invalid_single_team",
+      "input": "0000000\n",
+      "valid_domain": false,
+      "required_output": null,
+      "stdout": "YES\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.012194,
+      "observed_behavior_matches_saved_example": true
+    },
+    {
+      "artifact": "ec_code.py",
+      "case": "valid_no",
+      "input": "001001\n",
+      "valid_domain": true,
+      "required_output": "NO",
+      "stdout": "NO\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.03773,
+      "observed_behavior_matches_saved_example": true
+    },
+    {
+      "artifact": "ec_code.py",
+      "case": "valid_yes",
+      "input": "1000000001\n",
+      "valid_domain": true,
+      "required_output": "YES",
+      "stdout": "YES\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.031431,
+      "observed_behavior_matches_saved_example": true
+    },
+    {
+      "artifact": "ec_code.py",
+      "case": "invalid_single_team",
+      "input": "0000000\n",
+      "valid_domain": false,
+      "required_output": null,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"tmp/football-v50l0du9/solution.py\", line 37, in <module>\n    main()\n  File \"tmp/football-v50l0du9/solution.py\", line 34, in main\n    result = solve(s)\n             ^^^^^^^^\n  File \"historical/.venv/lib/python3.12/site-packages/icontract/_checkers.py\", line 823, in wrapper\n    raise violation_error\nicontract.errors.ViolationError: File tmp/football-v50l0du9/solution.py, line 6 in <module>:\n'0' in s and '1' in s: s was '0000000'\n",
+      "returncode": 1,
+      "elapsed_seconds": 0.032817,
+      "observed_behavior_matches_saved_example": true
+    }
+  ],
+  "interpretation": "The invalid one-team input has no required functional output. This replay demonstrates selected precondition enforcement, not a natural postcondition-fault detection or functional-generation advantage."
+}

@@ -1,0 +1,12 @@
+{
+  "status": "available",
+  "missing": false,
+  "missing_reasons": [],
+  "plan_exists": true,
+  "plan_total": 11,
+  "code_probe_report_exists": true,
+  "contract_probe_report_exists": true,
+  "comparison_exists": true,
+  "source": "generated_spec_probes",
+  "stage_error": null
+}

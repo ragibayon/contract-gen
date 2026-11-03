@@ -1,0 +1,155 @@
+{
+  "probes": [
+    {
+      "type": "oracle",
+      "input": "001001",
+      "expected": "NO",
+      "paired_input": null,
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "reason": "No consecutive 7+ players of same team; should output NO.",
+      "priority": "high"
+    },
+    {
+      "type": "oracle",
+      "input": "1000000001",
+      "expected": "YES",
+      "paired_input": null,
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "reason": "Contains 7 consecutive 0s; should output YES.",
+      "priority": "high"
+    },
+    {
+      "type": "oracle",
+      "input": "0000000",
+      "expected": "YES",
+      "paired_input": null,
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "reason": "Exactly 7 consecutive 0s at minimum dangerous threshold; should output YES.",
+      "priority": "high"
+    },
+    {
+      "type": "oracle",
+      "input": "11111110",
+      "expected": "YES",
+      "paired_input": null,
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "reason": "Contains 7 consecutive 1s; should output YES.",
+      "priority": "high"
+    },
+    {
+      "type": "oracle",
+      "input": "000001111111",
+      "expected": "YES",
+      "paired_input": null,
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-001"
+      ],
+      "reason": "Contains 7 consecutive 1s at end; should output YES.",
+      "priority": "high"
+    },
+    {
+      "type": "violation",
+      "input": "",
+      "expected": null,
+      "paired_input": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-001"
+      ],
+      "reason": "Empty string violates non-empty precondition.",
+      "priority": "high"
+    },
+    {
+      "type": "violation",
+      "input": "0",
+      "expected": null,
+      "paired_input": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "reason": "Only 0s present; violates requirement that both teams must be on field.",
+      "priority": "high"
+    },
+    {
+      "type": "violation",
+      "input": "1",
+      "expected": null,
+      "paired_input": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-004"
+      ],
+      "reason": "Only 1s present; violates requirement that both teams must be on field.",
+      "priority": "high"
+    },
+    {
+      "type": "violation",
+      "input": "01010120101",
+      "expected": null,
+      "paired_input": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-002"
+      ],
+      "reason": "Contains character '2'; violates constraint that string must contain only 0 and 1.",
+      "priority": "high"
+    },
+    {
+      "type": "violation",
+      "input": "01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101",
+      "expected": null,
+      "paired_input": null,
+      "relation": "contract_violation",
+      "requirement_ids": [
+        "NLC-PRE-003"
+      ],
+      "reason": "String length 128 exceeds maximum of 100 characters.",
+      "priority": "high"
+    },
+    {
+      "type": "oracle",
+      "input": "000000",
+      "expected": "NO",
+      "paired_input": null,
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "reason": "6 consecutive 0s is below threshold; should output NO.",
+      "priority": "high"
+    },
+    {
+      "type": "oracle",
+      "input": "111111",
+      "expected": "NO",
+      "paired_input": null,
+      "relation": "",
+      "requirement_ids": [
+        "NLC-INV-001",
+        "NLC-POST-002"
+      ],
+      "reason": "6 consecutive 1s is below threshold; should output NO.",
+      "priority": "high"
+    }
+  ]
+}
